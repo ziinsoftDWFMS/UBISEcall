@@ -17,9 +17,39 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+        NSLog(@"%@",@"등록완료");
+    } else {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+        NSLog(@"%@",@"등록완료");
+    }
     return YES;
 }
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    
+    NSLog(@"My token is: %@", deviceToken);
+    NSLog(@"A5PNS Device Token: %@", @"test1");
+    NSMutableString *deviceId = [NSMutableString string];
+    const unsigned char* ptr = (const unsigned char*) [deviceToken bytes];
+    
+    for(int i = 0 ; i < 32 ; i++)
+    {
+        [deviceId appendFormat:@"%02x", ptr[i]];
+        NSLog(@"deviceid  Token: %02x", ptr[i]);
+    }
+    
+    NSLog(@"A6PNS Device Token: %@", deviceId);
+}
 
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+    NSLog(@"Failed to get token, error: %@", error);
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
