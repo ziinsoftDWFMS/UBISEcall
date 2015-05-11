@@ -18,25 +18,20 @@
 @synthesize phoneText;
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (IBAction)sendEvent:(id)sender {
-    
-    
     AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSLog(@"device Token is<<<>>>%@", app.DEVICE_TOK);
-    
-    
+    NSLog(@"device Token is>>>%@", app.DEVICE_TOK);
+        
     NSString *phone = self.phoneText.text;
     UIDevice *device = [UIDevice currentDevice];
     NSString* idForVendor = [device.identifierForVendor UUIDString];
     
-    NSLog(@">>>>>%@",idForVendor);
+    NSLog(@"idForVendor>>>%@",idForVendor);
     
     CAllServer* res = [CAllServer alloc];
     NSMutableDictionary* param = [[NSMutableDictionary alloc] init];
@@ -47,16 +42,13 @@
     [param setValue:app.DEVICE_TOK forKey:@"gcm_id"];
     NSString* str = [res stringWithUrl:@"regEmcAppInstInfo.do" VAL:param];
     
-    NSLog(@" %@",str);
+    NSLog(@"result>>>%@",str);
     
     NSData *jsonData = [str dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error;
     NSDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
     NSArray* keys = jsonInfo.allKeys;
     
-    NSLog(@"keys cont %d",keys.count);
-    
-    NSString * urlParam =@"";
     for (int i=0; i<keys.count; i++) {
        
         
@@ -66,37 +58,8 @@
             {
                 NSLog(@"key %@  value %@",[keys objectAtIndex:i],[jsonInfo objectForKey:[keys objectAtIndex:i]] );
 
-                
-                //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                //UIViewController *ViewController = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-                
-                //self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-                
-                //ViewController.view.alpha = 0;
-                //[UIView animateWithDuration:0.5 animations:^{
-                //    ViewController.view.alpha = 1;
-                //} completion:^(BOOL finished) {
-                //    [self presentModalViewController:ViewController animated:NO];
-                //}];
-                
-                
-                
-                //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                
-                //UIViewController *ViewController = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-                
-                //[self presentViewController:ViewController animated:NO completion:nil];
-                
                 [self performSegueWithIdentifier:@"webviewTrans" sender:self];
-                
-                
-                //[UIView animateWithDuration:0.0 animations:^{
-                //    self.view.alpha = 0;
-                //} completion:^(BOOL b){
-                //    [self.presentingViewController dismissModalViewControllerAnimated:NO];
-                //    self.view.alpha = 1;
-                //}];
-
+               
             }
         }
         
@@ -108,19 +71,10 @@
     }
     
     
-    //[res test:@"callTest.do"]
-    
 }
 - (IBAction)cancelEvent:(id)sender {
     
     exit(0);
-    /*
-    [UIView animateWithDuration:0.0 animations:^{
-        self.view.alpha = 0;
-    } completion:^(BOOL b){
-        [self.presentingViewController dismissModalViewControllerAnimated:NO];
-        self.view.alpha = 1;
-    }];*/
     
 }
 

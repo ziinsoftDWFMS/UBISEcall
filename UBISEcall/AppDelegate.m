@@ -33,17 +33,21 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     
     NSLog(@"My token is: %@", deviceToken);
-    NSLog(@"A5PNS Device Token: %@", @"test1");
     NSMutableString *deviceId = [NSMutableString string];
     const unsigned char* ptr = (const unsigned char*) [deviceToken bytes];
     
     for(int i = 0 ; i < 32 ; i++)
     {
         [deviceId appendFormat:@"%02x", ptr[i]];
-        NSLog(@"deviceid  Token: %02x", ptr[i]);
+        //NSLog(@"deviceid  Token: %02x", ptr[i]);
     }
     
     NSLog(@"A6PNS Device Token: %@", deviceId);
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    app.DEVICE_TOK = deviceId;
+    
+    NSLog(@"APNS Device Tok: %@", app.DEVICE_TOK);
 }
 
 - (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
@@ -58,12 +62,11 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     
     application.applicationIconBadgeNumber = 0;
-    //NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
     NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
     NSString *emcId            = [userInfo valueForKey:@"EMC_ID"];
     NSString *emcMsg           = [userInfo valueForKey:@"EMC_MSG"];
-    NSString *code              = [userInfo valueForKey:@"CODE"];
-    //NSString *message           = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
+    NSString *code             = [userInfo valueForKey:@"CODE"];
+   
     NSLog(@"GRP_CD: %@",    grpCd);
     NSLog(@"EMC_ID: %@",    emcId);
     NSLog(@"EMC_MSG: %@",   emcMsg);
@@ -76,50 +79,11 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                    message:EMC_MSG delegate:self
-                                          cancelButtonTitle:@"취소"
-                                          otherButtonTitles:@"확인", nil];
+                                              message:EMC_MSG delegate:self
+                                              cancelButtonTitle:@"취소"
+                                              otherButtonTitles:@"확인", nil];
     [alert show];
     
-    /*
-     if(application.applicationState == UIApplicationStateActive){
-     NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-     NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-     NSLog(@"message: %@", message);
-     
-     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-     message:message delegate:self
-     cancelButtonTitle:@"확인"
-     otherButtonTitles:@"전화걸기", nil];
-     
-     [alert show];
-     
-     }else if(application.applicationState == UIApplicationStateInactive){
-     
-     NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-     NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-     NSLog(@"message: %@", message);
-     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-     message:message delegate:self
-     cancelButtonTitle:@"취소"
-     otherButtonTitles:@"전화걸기", nil];
-     [alert show];
-     //전화걸기
-     
-     }else{
-     
-     NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
-     NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
-     NSLog(@"message: %@", message);
-     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-     message:message delegate:self
-     cancelButtonTitle:@"취소"
-     otherButtonTitles:@"전화걸기", nil];
-     [alert show];
-     
-     NSLog(@"message: %@", @"fail state");
-     
-     }*/
     NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
     
     [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];

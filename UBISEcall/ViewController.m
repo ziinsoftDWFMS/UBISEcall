@@ -52,56 +52,17 @@ NSString* idForVendor;
     NSData *jsonData = [str dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error;
     NSDictionary *jsonInfo = [NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:&error];
-    NSArray* keys = jsonInfo.allKeys;
-    
-    NSLog(@"keys cont %d",keys.count);
     
     NSLog(@" ,login?? %@",str);
     
     if([str  isEqual: @"{}"]){
-        // [tempViewCon.view setBackgroundColor:[UIColor whiteColor]];
-        // [[self navigationController] pushViewController:tempViewCon animated: YES];
-        
-        NSLog(@">>31231>>>1234%@",idForVendor);
-        
-        
-        
-        // UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard"  bundle:[NSBundle mainBundle]];
-        
-        
-        
-        //IdentViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"Detail"];
-        
-        // [self presentModalViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"IdentView"] animated:YES];
-        
-        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        //UIViewController *authViewController = [storyboard instantiateViewControllerWithIdentifier:@"authViewController"];
-        
-        //self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-        
-        //authViewController.view.alpha = 0;
-        //[UIView animateWithDuration:0.5 animations:^{
-        //    authViewController.view.alpha = 1;
-        //} completion:^(BOOL finished) {
-        //    [self presentModalViewController:authViewController animated:NO];
-        //}];
-        
-        
-     
-        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        //UIViewController *authViewController = [storyboard instantiateViewControllerWithIdentifier:@"authViewController"];
-        
-        //[self presentViewController:authViewController animated:NO completion:nil];
+       
+        NSLog(@">>>>>%@",idForVendor);
+       
         navigateYN = YES;
-        //[self performSegueWithIdentifier:@"authviewTrans" sender:self];
-        
+       
     }else{
         navigateYN = NO;
-        
-        
-
-        
-        
         
     }
     
