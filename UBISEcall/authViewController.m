@@ -9,6 +9,7 @@
 #import "authViewController.h"
 #import "CAllServer.h"
 #import "AppDelegate.h"
+#import "ViewController.h"
 @interface authViewController ()
 
 @end
@@ -65,6 +66,20 @@
             {
                 NSLog(@"key %@  value %@",[keys objectAtIndex:i],[jsonInfo objectForKey:[keys objectAtIndex:i]] );
 
+                
+                //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                //UIViewController *ViewController = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+                
+                //self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+                
+                //ViewController.view.alpha = 0;
+                //[UIView animateWithDuration:0.5 animations:^{
+                //    ViewController.view.alpha = 1;
+                //} completion:^(BOOL finished) {
+                //    [self presentModalViewController:ViewController animated:NO];
+                //}];
+                
+                
                 
                 [UIView animateWithDuration:0.0 animations:^{
                     self.view.alpha = 0;
