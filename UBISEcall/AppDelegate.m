@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "CAllServer.h"
 @interface AppDelegate ()
 
 @end
@@ -50,6 +50,107 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     NSLog(@"Failed to get token, error: %@", error);
 }
+
+
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    
+    application.applicationIconBadgeNumber = 0;
+    //NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
+    NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
+    NSString *emcId            = [userInfo valueForKey:@"EMC_ID"];
+    NSString *emcMsg           = [userInfo valueForKey:@"EMC_MSG"];
+    NSString *code              = [userInfo valueForKey:@"CODE"];
+    //NSString *message           = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
+    NSLog(@"GRP_CD: %@",    grpCd);
+    NSLog(@"EMC_ID: %@",    emcId);
+    NSLog(@"EMC_MSG: %@",   emcMsg);
+    NSLog(@"CODE: %@",      code);
+    
+    GRP_CD  = grpCd;
+    EMC_ID  = emcId;
+    EMC_MSG = emcMsg;
+    CODE    = code;
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                    message:EMC_MSG delegate:self
+                                          cancelButtonTitle:@"취소"
+                                          otherButtonTitles:@"확인", nil];
+    [alert show];
+    
+    /*
+     if(application.applicationState == UIApplicationStateActive){
+     NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
+     NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
+     NSLog(@"message: %@", message);
+     
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+     message:message delegate:self
+     cancelButtonTitle:@"확인"
+     otherButtonTitles:@"전화걸기", nil];
+     
+     [alert show];
+     
+     }else if(application.applicationState == UIApplicationStateInactive){
+     
+     NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
+     NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
+     NSLog(@"message: %@", message);
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+     message:message delegate:self
+     cancelButtonTitle:@"취소"
+     otherButtonTitles:@"전화걸기", nil];
+     [alert show];
+     //전화걸기
+     
+     }else{
+     
+     NSDictionary *apsDictionary = [userInfo valueForKey:@"aps"];
+     NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
+     NSLog(@"message: %@", message);
+     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+     message:message delegate:self
+     cancelButtonTitle:@"취소"
+     otherButtonTitles:@"전화걸기", nil];
+     [alert show];
+     
+     NSLog(@"message: %@", @"fail state");
+     
+     }*/
+    NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
+    
+    [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+}
+
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"Clicked");
+    // OK 버튼을 눌렀을 때 버튼Index가 1로 들어감
+    
+    if (buttonIndex == 1) {
+        NSLog(@"Clicked YES");
+        
+        
+    }
+    else {
+        NSLog(@"Clicked NO");
+        
+        
+    }
+    
+    
+    
+}
+
+
+
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
