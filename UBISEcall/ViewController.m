@@ -37,6 +37,7 @@ NSString* idForVendor;
     //[param setValue:@"" forKey:@"hp"];
     
     [param setValue:@"L" forKey:@"gubun"];
+    [param setValue:@"RL01" forKey:@"code"];
     
     [param setObject:idForVendor forKey:@"deviceId"];
     
@@ -74,7 +75,8 @@ NSString* idForVendor;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
+    [super viewDidAppear:animated];
+    NSLog(@"@@@@@@@@@@@@@@  call viewDidAppear");
     if (navigateYN) {
         [self performSegueWithIdentifier:@"authviewTrans" sender:self];
     } else {
@@ -88,6 +90,10 @@ NSString* idForVendor;
         [_site loadRequest:requestURL];
     }
 
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"@@@@@@@@@@@@@@  call viewWillAppear");
 }
 
 
