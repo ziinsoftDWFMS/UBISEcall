@@ -14,6 +14,12 @@
 		57DAF1D51AFA7B2500065328 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DAF1D41AFA7B2500065328 /* Images.xcassets */; };
 		57DAF1D81AFA7B2500065328 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57DAF1D61AFA7B2500065328 /* LaunchScreen.xib */; };
 		57DAF1E41AFA7B2500065328 /* UBISEcallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DAF1E31AFA7B2500065328 /* UBISEcallTests.m */; };
+		BAF22CA21B0052EF0019A333 /* CAllServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF22CA11B0052EF0019A333 /* CAllServer.m */; };
+		BAF22CA51B00588C0019A333 /* DwfmsSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF22CA41B00588C0019A333 /* DwfmsSegue.m */; };
+		BAF22CA71B0058950019A333 /* authViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF22CA61B0058950019A333 /* authViewController.m */; };
+		BAF3CAAE1B005E5D00DD62C3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CAAD1B005E5D00DD62C3 /* Icon.png */; };
+		BAF3CAB01B005EFD00DD62C3 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CAAF1B005EFD00DD62C3 /* ic_launcher.png */; };
+		BAF3CAB21B005F4200DD62C3 /* ic_launcher-web.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CAB11B005F4200DD62C3 /* ic_launcher-web.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,15 @@
 		57DAF1DD1AFA7B2500065328 /* UBISEcallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UBISEcallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DAF1E21AFA7B2500065328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57DAF1E31AFA7B2500065328 /* UBISEcallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UBISEcallTests.m; sourceTree = "<group>"; };
+		BAF22CA01B0052E20019A333 /* CAllServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAllServer.h; sourceTree = "<group>"; };
+		BAF22CA11B0052EF0019A333 /* CAllServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAllServer.m; sourceTree = "<group>"; };
+		BAF22CA31B0058850019A333 /* DwfmsSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DwfmsSegue.h; sourceTree = "<group>"; };
+		BAF22CA41B00588C0019A333 /* DwfmsSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DwfmsSegue.m; sourceTree = "<group>"; };
+		BAF22CA61B0058950019A333 /* authViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = authViewController.m; sourceTree = "<group>"; };
+		BAF22CA81B00589E0019A333 /* authViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authViewController.h; sourceTree = "<group>"; };
+		BAF3CAAD1B005E5D00DD62C3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		BAF3CAAF1B005EFD00DD62C3 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
+		BAF3CAB11B005F4200DD62C3 /* ic_launcher-web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_launcher-web.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +96,13 @@
 		57DAF1C61AFA7B2500065328 /* UBISEcall */ = {
 			isa = PBXGroup;
 			children = (
+				BAF3CAAC1B005E2F00DD62C3 /* image */,
+				BAF22CA81B00589E0019A333 /* authViewController.h */,
+				BAF22CA61B0058950019A333 /* authViewController.m */,
+				BAF22CA41B00588C0019A333 /* DwfmsSegue.m */,
+				BAF22CA31B0058850019A333 /* DwfmsSegue.h */,
+				BAF22CA11B0052EF0019A333 /* CAllServer.m */,
+				BAF22CA01B0052E20019A333 /* CAllServer.h */,
 				57DAF1CB1AFA7B2500065328 /* AppDelegate.h */,
 				57DAF1CC1AFA7B2500065328 /* AppDelegate.m */,
 				57DAF1CE1AFA7B2500065328 /* ViewController.h */,
@@ -117,6 +139,16 @@
 				57DAF1E21AFA7B2500065328 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BAF3CAAC1B005E2F00DD62C3 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				BAF3CAB11B005F4200DD62C3 /* ic_launcher-web.png */,
+				BAF3CAAF1B005EFD00DD62C3 /* ic_launcher.png */,
+				BAF3CAAD1B005E5D00DD62C3 /* Icon.png */,
+			);
+			name = image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +232,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				57DAF1D31AFA7B2500065328 /* Main.storyboard in Resources */,
+				BAF3CAAE1B005E5D00DD62C3 /* Icon.png in Resources */,
 				57DAF1D81AFA7B2500065328 /* LaunchScreen.xib in Resources */,
 				57DAF1D51AFA7B2500065328 /* Images.xcassets in Resources */,
+				BAF3CAB21B005F4200DD62C3 /* ic_launcher-web.png in Resources */,
+				BAF3CAB01B005EFD00DD62C3 /* ic_launcher.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +255,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				57DAF1D01AFA7B2500065328 /* ViewController.m in Sources */,
+				BAF22CA51B00588C0019A333 /* DwfmsSegue.m in Sources */,
 				57DAF1CD1AFA7B2500065328 /* AppDelegate.m in Sources */,
+				BAF22CA21B0052EF0019A333 /* CAllServer.m in Sources */,
+				BAF22CA71B0058950019A333 /* authViewController.m in Sources */,
 				57DAF1CA1AFA7B2500065328 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,7 +384,6 @@
 		57DAF1E81AFA7B2500065328 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UBISEcall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -357,7 +394,6 @@
 		57DAF1E91AFA7B2500065328 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UBISEcall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
