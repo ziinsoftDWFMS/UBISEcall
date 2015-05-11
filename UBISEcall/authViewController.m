@@ -81,12 +81,21 @@
                 
                 
                 
-                [UIView animateWithDuration:0.0 animations:^{
-                    self.view.alpha = 0;
-                } completion:^(BOOL b){
-                    [self.presentingViewController dismissModalViewControllerAnimated:NO];
-                    self.view.alpha = 1;
-                }];
+                //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                
+                //UIViewController *ViewController = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+                
+                //[self presentViewController:ViewController animated:NO completion:nil];
+                
+                [self performSegueWithIdentifier:@"webviewTrans" sender:self];
+                
+                
+                //[UIView animateWithDuration:0.0 animations:^{
+                //    self.view.alpha = 0;
+                //} completion:^(BOOL b){
+                //    [self.presentingViewController dismissModalViewControllerAnimated:NO];
+                //    self.view.alpha = 1;
+                //}];
 
             }
         }

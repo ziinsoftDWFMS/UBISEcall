@@ -39,6 +39,7 @@
                     </view>
                     <connections>
                         <outlet property="site" destination="lhs-bK-8d1" id="bl7-hM-dDc"/>
+                        <segue destination="xc1-H0-jUC" kind="show" identifier="authviewTrans" id="umQ-0M-QoP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -119,6 +120,7 @@
                         <outlet property="infoText" destination="Gys-Nc-dKw" id="wLm-ad-doH"/>
                         <outlet property="phoneText" destination="9ED-Kw-0V5" id="XAK-1c-FHq"/>
                         <outlet property="sendButton" destination="chD-hf-mgg" id="SUK-yh-3JD"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="webviewTrans" id="7tI-uz-R1X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVt-0O-85v" userLabel="First Responder" sceneMemberID="firstResponder"/>

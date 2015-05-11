@@ -17,13 +17,16 @@
 
 @implementation ViewController
 
+BOOL navigateYN;
+NSString* idForVendor;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    
     UIDevice *device = [UIDevice currentDevice];
-    NSString* idForVendor = [device.identifierForVendor UUIDString];
+    idForVendor = [device.identifierForVendor UUIDString];
     
     NSLog(@">>>>>%@",idForVendor);
     //서버에서 결과 리턴받기
@@ -71,37 +74,36 @@
         
         // [self presentModalViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"IdentView"] animated:YES];
         
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UIViewController *authViewController = [storyboard instantiateViewControllerWithIdentifier:@"authViewController"];
+        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        //UIViewController *authViewController = [storyboard instantiateViewControllerWithIdentifier:@"authViewController"];
         
-        self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
+        //self.navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
         
-        authViewController.view.alpha = 0;
-        [UIView animateWithDuration:0.5 animations:^{
-            authViewController.view.alpha = 1;
-        } completion:^(BOOL finished) {
-            [self presentModalViewController:authViewController animated:NO];
-        }];
+        //authViewController.view.alpha = 0;
+        //[UIView animateWithDuration:0.5 animations:^{
+        //    authViewController.view.alpha = 1;
+        //} completion:^(BOOL finished) {
+        //    [self presentModalViewController:authViewController animated:NO];
+        //}];
         
+        
+     
+        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        //UIViewController *authViewController = [storyboard instantiateViewControllerWithIdentifier:@"authViewController"];
+        
+        //[self presentViewController:authViewController animated:NO completion:nil];
+        navigateYN = YES;
+        //[self performSegueWithIdentifier:@"authviewTrans" sender:self];
         
     }else{
+        navigateYN = NO;
         
         
-        NSLog(@">>4566>>>1234%@",idForVendor);
-        //정상 인증을 받았으므로 WebView Display
-        
-        NSString *serverUrl = [NSString stringWithFormat:@"http://211.253.9.3:8080/emcListPage.do?deviceId=%@",idForVendor] ;
-        
-        NSURL *url=[NSURL URLWithString:serverUrl];
-        NSURLRequest *requestURL=[NSURLRequest requestWithURL:url];
-        [_site loadRequest:requestURL];
 
         
         
         
     }
-    
-    
     
 }
 
@@ -110,7 +112,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+    if (navigateYN) {
+        [self performSegueWithIdentifier:@"authviewTrans" sender:self];
+    } else {
+        NSLog(@">>4566>>>1234%@",idForVendor);
+        //정상 인증을 받았으므로 WebView Display
+        
+        NSString *serverUrl = [NSString stringWithFormat:@"http://211.253.9.3:8080/emcListPage.do?deviceId=%@",idForVendor] ;
+        
+        NSURL *url=[NSURL URLWithString:serverUrl];
+        NSURLRequest *requestURL=[NSURLRequest requestWithURL:url];
+        [_site loadRequest:requestURL];
+    }
 
+}
 
 
 @end
