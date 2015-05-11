@@ -19,6 +19,7 @@
 		BAF22CA71B0058950019A333 /* authViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF22CA61B0058950019A333 /* authViewController.m */; };
 		BAF3CAB01B005EFD00DD62C3 /* ic_launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CAAF1B005EFD00DD62C3 /* ic_launcher.png */; };
 		BAF3CAB21B005F4200DD62C3 /* ic_launcher-web.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CAB11B005F4200DD62C3 /* ic_launcher-web.png */; };
+		BAF3CAB41B00DD1700DD62C3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BAF3CAB31B00DD1700DD62C3 /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		BAF22CA81B00589E0019A333 /* authViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = authViewController.h; sourceTree = "<group>"; };
 		BAF3CAAF1B005EFD00DD62C3 /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		BAF3CAB11B005F4200DD62C3 /* ic_launcher-web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_launcher-web.png"; sourceTree = "<group>"; };
+		BAF3CAB31B00DD1700DD62C3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 		BAF3CAAC1B005E2F00DD62C3 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				BAF3CAB31B00DD1700DD62C3 /* Icon.png */,
 				BAF3CAB11B005F4200DD62C3 /* ic_launcher-web.png */,
 				BAF3CAAF1B005EFD00DD62C3 /* ic_launcher.png */,
 			);
@@ -228,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF3CAB41B00DD1700DD62C3 /* Icon.png in Resources */,
 				57DAF1D31AFA7B2500065328 /* Main.storyboard in Resources */,
 				57DAF1D81AFA7B2500065328 /* LaunchScreen.xib in Resources */,
 				57DAF1D51AFA7B2500065328 /* Images.xcassets in Resources */,
