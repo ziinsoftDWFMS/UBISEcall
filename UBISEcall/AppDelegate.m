@@ -26,6 +26,43 @@
         [[UIApplication sharedApplication] registerForRemoteNotificationTypes: (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
         NSLog(@"%@",@"등록완료");
     }
+    
+    
+    if(launchOptions)
+    {
+        application.applicationIconBadgeNumber = 0;
+        
+        NSDictionary *launchDictionary = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey ];
+        NSDictionary *apsDictionary = [launchDictionary valueForKey:@"aps"];
+        //NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
+        
+        NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
+        
+        [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        
+        
+        NSString *grpCd            = [launchDictionary valueForKey:@"GRP_CD"];
+        NSString *emcId            = [launchDictionary valueForKey:@"EMC_ID"];
+        NSString *emcMsg           = [launchDictionary valueForKey:@"CONF_MSG"];
+        NSString *code              = [launchDictionary valueForKey:@"CODE"];
+        NSLog(@"GRP_CD: %@",    grpCd);
+        NSLog(@"EMC_ID: %@",    emcId);
+        NSLog(@"CONF_MSG: %@",   emcMsg);
+        NSLog(@"CODE: %@",      code);
+        
+        GRP_CD  = grpCd;
+        EMC_ID  = emcId;
+        EMC_MSG = emcMsg;
+        CODE    = code;
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                                        message:emcMsg delegate:self
+                                              cancelButtonTitle:@"취소"
+                                              otherButtonTitles:@"확인", nil];
+        [alert show];
+        
+    }
     return YES;
 }
 - (void)application:(UIApplication *)application
@@ -64,12 +101,12 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     application.applicationIconBadgeNumber = 0;
     NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
     NSString *emcId            = [userInfo valueForKey:@"EMC_ID"];
-    NSString *emcMsg           = [userInfo valueForKey:@"EMC_MSG"];
+    NSString *emcMsg           = [userInfo valueForKey:@"CONF_MSG"];
     NSString *code             = [userInfo valueForKey:@"CODE"];
    
     NSLog(@"GRP_CD: %@",    grpCd);
     NSLog(@"EMC_ID: %@",    emcId);
-    NSLog(@"EMC_MSG: %@",   emcMsg);
+    NSLog(@"CONF_MSG: %@",   emcMsg);
     NSLog(@"CODE: %@",      code);
     
     GRP_CD  = grpCd;
