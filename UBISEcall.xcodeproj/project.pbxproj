@@ -14,6 +14,7 @@
 		57DAF1D51AFA7B2500065328 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57DAF1D41AFA7B2500065328 /* Images.xcassets */; };
 		57DAF1D81AFA7B2500065328 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57DAF1D61AFA7B2500065328 /* LaunchScreen.xib */; };
 		57DAF1E41AFA7B2500065328 /* UBISEcallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DAF1E31AFA7B2500065328 /* UBISEcallTests.m */; };
+		57E27D731B03A45D000046EA /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57E27D721B03A45D000046EA /* 1.wav */; };
 		BAAFA5A81B012069006C3185 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAFA5A71B012069006C3185 /* AudioToolbox.framework */; };
 		BAAFA5AB1B012E63006C3185 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = BAAFA5AA1B012E63006C3185 /* sound.wav */; };
 		BAF22CA21B0052EF0019A333 /* CAllServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF22CA11B0052EF0019A333 /* CAllServer.m */; };
@@ -48,6 +49,7 @@
 		57DAF1DD1AFA7B2500065328 /* UBISEcallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UBISEcallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DAF1E21AFA7B2500065328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57DAF1E31AFA7B2500065328 /* UBISEcallTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UBISEcallTests.m; sourceTree = "<group>"; };
+		57E27D721B03A45D000046EA /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
 		BAAFA5A71B012069006C3185 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BAAFA5AA1B012E63006C3185 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		BAF22CA01B0052E20019A333 /* CAllServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAllServer.h; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		BAAFA5A91B012E41006C3185 /* resource */ = {
 			isa = PBXGroup;
 			children = (
+				57E27D721B03A45D000046EA /* 1.wav */,
 				BAAFA5AA1B012E63006C3185 /* sound.wav */,
 			);
 			name = resource;
@@ -251,6 +254,7 @@
 				57DAF1D81AFA7B2500065328 /* LaunchScreen.xib in Resources */,
 				57DAF1D51AFA7B2500065328 /* Images.xcassets in Resources */,
 				BAF3CAB21B005F4200DD62C3 /* ic_launcher-web.png in Resources */,
+				57E27D731B03A45D000046EA /* 1.wav in Resources */,
 				BAAFA5AB1B012E63006C3185 /* sound.wav in Resources */,
 				BAF3CAB01B005EFD00DD62C3 /* ic_launcher.png in Resources */,
 			);
