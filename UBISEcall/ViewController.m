@@ -96,5 +96,13 @@ NSString* idForVendor;
     NSLog(@"@@@@@@@@@@@@@@  call viewWillAppear");
 }
 
+- (void)viewDidUnload {
+    NSLog(@"@@@@@@@@@@@@@@  call viewDidunload");
 
+    if (navigateYN) {
+            NSLog(@"@@@@@@@@@@@@@@  load authViewController ~~~~~~~");
+    } else {
+        exit(0);
+    }
+}
 @end
