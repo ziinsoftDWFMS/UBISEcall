@@ -127,6 +127,15 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
                                               otherButtonTitles:@"확인", nil];
     [alert show];
     
+    if(application.applicationState == UIApplicationStateActive){
+        NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"wav" inDirectory:@"/"];
+        CFURLRef sndURL = (CFURLRef)CFBridgingRetain([[NSURL alloc] initFileURLWithPath:sndPath]);
+        AudioServicesCreateSystemSoundID(sndURL, &ssid);
+        
+        AudioServicesPlaySystemSound(ssid);
+        
+    }
+    
     NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
     
     [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
@@ -150,8 +159,9 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
         
     }
-    
-    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
 }
 
