@@ -43,19 +43,19 @@
         [[UIApplication sharedApplication] cancelAllLocalNotifications];
         
         
-        NSString *grpCd            = [launchDictionary valueForKey:@"GRP_CD"];
+        //NSString *grpCd            = [launchDictionary valueForKey:@"GRP_CD"];
         NSString *emcId            = [launchDictionary valueForKey:@"EMC_ID"];
         NSString *emcMsg           = [launchDictionary valueForKey:@"CONF_MSG"];
-        NSString *code              = [launchDictionary valueForKey:@"CODE"];
-        NSLog(@"GRP_CD: %@",    grpCd);
+        //NSString *code              = [launchDictionary valueForKey:@"CODE"];
+        //NSLog(@"GRP_CD: %@",    grpCd);
         NSLog(@"EMC_ID: %@",    emcId);
         NSLog(@"CONF_MSG: %@",   emcMsg);
-        NSLog(@"CODE: %@",      code);
+        //NSLog(@"CODE: %@",      code);
         
-        GRP_CD  = grpCd;
+        //GRP_CD  = grpCd;
         EMC_ID  = emcId;
         EMC_MSG = emcMsg;
-        CODE    = code;
+        //CODE    = code;
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
                                                         message:emcMsg delegate:self
@@ -98,35 +98,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    //NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"wav" inDirectory:@"/"];
-    //CFURLRef sndURL = (CFURLRef)CFBridgingRetain([[NSURL alloc] initFileURLWithPath:sndPath]);
-    //AudioServicesCreateSystemSoundID(sndURL, &ssid);
-    
-    //AudioServicesPlaySystemSound(ssid);
-    
-    application.applicationIconBadgeNumber = 0;
-    NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
-    NSString *emcId            = [userInfo valueForKey:@"EMC_ID"];
-    NSString *emcMsg           = [userInfo valueForKey:@"CONF_MSG"];
-    NSString *code             = [userInfo valueForKey:@"CODE"];
-   
-    NSLog(@"GRP_CD: %@",    grpCd);
-    NSLog(@"EMC_ID: %@",    emcId);
-    NSLog(@"CONF_MSG: %@",   emcMsg);
-    NSLog(@"CODE: %@",      code);
-    
-    GRP_CD  = grpCd;
-    EMC_ID  = emcId;
-    EMC_MSG = emcMsg;
-    CODE    = code;
-    
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                              message:EMC_MSG delegate:self
-                                              cancelButtonTitle:@"취소"
-                                              otherButtonTitles:@"확인", nil];
-    [alert show];
-    
     if(application.applicationState == UIApplicationStateActive){
         NSString *sndPath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"wav" inDirectory:@"/"];
         CFURLRef sndURL = (CFURLRef)CFBridgingRetain([[NSURL alloc] initFileURLWithPath:sndPath]);
@@ -135,6 +106,31 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         AudioServicesPlaySystemSound(ssid);
         
     }
+    
+    application.applicationIconBadgeNumber = 0;
+    //NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
+    NSString *emcId            = [userInfo valueForKey:@"EMC_ID"];
+    NSString *emcMsg           = [userInfo valueForKey:@"CONF_MSG"];
+    //NSString *code             = [userInfo valueForKey:@"CODE"];
+   
+    //NSLog(@"GRP_CD: %@",    grpCd);
+    NSLog(@"EMC_ID: %@",    emcId);
+    NSLog(@"CONF_MSG: %@",   emcMsg);
+    //NSLog(@"CODE: %@",      code);
+    
+    //GRP_CD  = grpCd;
+    EMC_ID  = emcId;
+    EMC_MSG = emcMsg;
+    //CODE    = code;
+    
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+                                              message:EMC_MSG delegate:self
+                                              cancelButtonTitle:@"취소"
+                                              otherButtonTitles:@"확인", nil];
+    [alert show];
+    
+    
     
     NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
     
@@ -156,8 +152,11 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     }
     else {
         NSLog(@"Clicked NO");
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
         
-        
+        exit(0);
     }
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
