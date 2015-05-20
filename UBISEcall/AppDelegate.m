@@ -56,13 +56,24 @@
         EMC_ID  = emcId;
         EMC_MSG = emcMsg;
         //CODE    = code;
+        UITextView *txtView = nil ;
+        //
+        txtView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 0.0, 250.0, 80.0)];
+        [txtView setBackgroundColor:[UIColor clearColor]];
+        [txtView setTextAlignment:NSTextAlignmentLeft] ;
+        [txtView setEditable:NO];
+        [txtView setFont:[UIFont fontWithName:@"Avenir-Black" size:15]];
+        [txtView setText:emcMsg];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                                        message:emcMsg delegate:self
-                                              cancelButtonTitle:@"취소"
-                                              otherButtonTitles:@"확인", nil];
-        [alert show];
         
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[재난상황발생]"
+                                                        message:@"" delegate:self
+                                              cancelButtonTitle:@"확인"
+                                              otherButtonTitles:@"전화걸기", nil];
+        
+        [alert setValue:txtView forKey:@"accessoryView"];
+        //[alert addSubview:txtView];
+        [alert show] ;
     }    
     return YES;
 }
@@ -124,17 +135,28 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     //CODE    = code;
     
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
-                                              message:EMC_MSG delegate:self
-                                              cancelButtonTitle:@"취소"
-                                              otherButtonTitles:@"확인", nil];
-    [alert show];
+    UITextView *txtView = nil ;
+    //
+    txtView = [[UITextView alloc] initWithFrame:CGRectMake(0.0, 0.0, 250.0, 80.0)];
+    [txtView setBackgroundColor:[UIColor clearColor]];
+    [txtView setTextAlignment:NSTextAlignmentLeft] ;
+    [txtView setEditable:NO];
+    [txtView setFont:[UIFont fontWithName:@"Avenir-Black" size:15]];
+    [txtView setText:emcMsg];
     
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[재난상황발생]"
+                                                    message:@"" delegate:self
+                                          cancelButtonTitle:@"확인"
+                                          otherButtonTitles:@"전화걸기", nil];
     
-    NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
+    [alert setValue:txtView forKey:@"accessoryView"];
+    //[alert addSubview:txtView];
+    [alert show] ;
     
-    [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
+    
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
