@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "CAllServer.h"
 #import "authViewController.h"
-
+#import "GlobalData.h"
 
 @interface ViewController ()
 
@@ -85,7 +85,7 @@ NSString* idForVendor;
         NSLog(@">>4566>>>1234%@",idForVendor);
         //정상 인증을 받았으므로 WebView Display
         
-        NSString *serverUrl = [NSString stringWithFormat:@"http://211.253.9.3:8080/emcListPage.do?deviceId=%@",idForVendor] ;
+        NSString *serverUrl = [NSString stringWithFormat:@"%@/emcListPage.do?deviceId=%@",[GlobalData getServerIp],idForVendor] ;
         
         NSURL *url=[NSURL URLWithString:serverUrl];
         NSURLRequest *requestURL=[NSURLRequest requestWithURL:url];
