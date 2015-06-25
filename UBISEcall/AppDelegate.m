@@ -37,10 +37,10 @@
         NSDictionary *apsDictionary = [launchDictionary valueForKey:@"aps"];
         //NSString *message = (NSString *)[apsDictionary valueForKey:(id)@"alert"];
         
-        NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
+        //NSInteger applicationIconBadgeNumber = [application applicationIconBadgeNumber];
         
-        [application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        //[application setApplicationIconBadgeNumber:applicationIconBadgeNumber];
+        //[[UIApplication sharedApplication] cancelAllLocalNotifications];
         
         
         //NSString *grpCd            = [launchDictionary valueForKey:@"GRP_CD"];
@@ -118,7 +118,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
         
     }
     
-    application.applicationIconBadgeNumber = 0;
+    //application.applicationIconBadgeNumber = 0;
     //NSString *grpCd            = [userInfo valueForKey:@"GRP_CD"];
     NSString *emcId            = [userInfo valueForKey:@"EMC_ID"];
     NSString *emcMsg           = [userInfo valueForKey:@"CONF_MSG"];
@@ -155,9 +155,9 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     [alert show] ;
     
     
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+    //[[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
 
 
@@ -174,15 +174,15 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     }
     else {
         NSLog(@"Clicked NO");
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
-        [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-        [[UIApplication sharedApplication] cancelAllLocalNotifications];
+        //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+        //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+        //[[UIApplication sharedApplication] cancelAllLocalNotifications];
         
         exit(0);
     }
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
-    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
+    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
+   // [[UIApplication sharedApplication] cancelAllLocalNotifications];
     
 }
 
