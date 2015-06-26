@@ -145,10 +145,10 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     [txtView setText:emcMsg];
     
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[재난상황발생]"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[수신자확인]"
                                                     message:@"" delegate:self
                                           cancelButtonTitle:@"확인"
-                                          otherButtonTitles:@"전화걸기", nil];
+                                          otherButtonTitles: nil];
     
     [alert setValue:txtView forKey:@"accessoryView"];
     //[alert addSubview:txtView];
