@@ -69,7 +69,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[재난상황발생]"
                                                         message:@"" delegate:self
                                               cancelButtonTitle:@"확인"
-                                              otherButtonTitles:@"전화걸기", nil];
+                                              otherButtonTitles:nil, nil];
         
         [alert setValue:txtView forKey:@"accessoryView"];
         //[alert addSubview:txtView];
@@ -148,7 +148,7 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"[재난상황발생]"
                                                     message:@"" delegate:self
                                           cancelButtonTitle:@"확인"
-                                          otherButtonTitles:@"전화걸기", nil];
+                                          otherButtonTitles:nil, nil];
     
     [alert setValue:txtView forKey:@"accessoryView"];
     //[alert addSubview:txtView];
