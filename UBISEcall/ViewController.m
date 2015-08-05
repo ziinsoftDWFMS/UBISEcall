@@ -10,7 +10,7 @@
 #import "CAllServer.h"
 #import "authViewController.h"
 #import "GlobalData.h"
-
+#import "AppDelegate.h"
 @interface ViewController ()
 
 @end
@@ -24,7 +24,8 @@ NSString* idForVendor;
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.main = self;
     UIDevice *device = [UIDevice currentDevice];
     idForVendor = [device.identifierForVendor UUIDString];
     
@@ -66,6 +67,8 @@ NSString* idForVendor;
         navigateYN = NO;
         
     }
+    NSLog(@"@@@@@@@@@@@@@@ 123 call viewDidAppear %@",idForVendor);
+
     //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 1];
     //[[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     //[[UIApplication sharedApplication] cancelAllLocalNotifications];
@@ -78,18 +81,15 @@ NSString* idForVendor;
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSLog(@"@@@@@@@@@@@@@@  call viewDidAppear");
     if (navigateYN) {
         [self performSegueWithIdentifier:@"authviewTrans" sender:self];
     } else {
-        NSLog(@">>4566>>>1234%@",idForVendor);
         //정상 인증을 받았으므로 WebView Display
-        
         NSString *serverUrl = [NSString stringWithFormat:@"%@/emcListPage.do?deviceId=%@",[GlobalData getServerIp],idForVendor] ;
         
         NSURL *url=[NSURL URLWithString:serverUrl];
         NSURLRequest *requestURL=[NSURLRequest requestWithURL:url];
-        [_site loadRequest:requestURL];
+        [self.site loadRequest:requestURL];
     }
 
 }
@@ -107,4 +107,7 @@ NSString* idForVendor;
         exit(0);
     }
 }
+
+
+
 @end
