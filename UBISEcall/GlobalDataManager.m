@@ -26,7 +26,8 @@
     return gData;
 }
 + (void) initgData:(NSDictionary *)data {
-    NSLog(@" ?? initgData %@",self.getgData);
+    NSLog(@" ?? now~~~~ getgData : %@",self.getgData);
+    NSLog(@" ?? initgData : %@", data);
     UIDevice *device = [UIDevice currentDevice];
     NSString* idForVendor = [device.identifierForVendor UUIDString];
     
@@ -34,9 +35,9 @@
     [self.getgData setHpTel:idForVendor];
     [self.getgData setAuthInd:[data valueForKey:@"AUTH_IND"]];
     [self.getgData setEmpNm:[data valueForKey:@"EMPNO_NM"] ];
-    [self.getgData setEmpNo:[data valueForKey:@"EMPNO"]];
+    [self.getgData setEmpNo:[data valueForKey:@"ID"]];
     [self.getgData setDeptCd:[data valueForKey:@"DEPT_CD"]];
-
+    
 }
 + (void) initAuth:(NSArray *)data {
     NSMutableArray *tempAuth = [[NSMutableArray alloc] init];

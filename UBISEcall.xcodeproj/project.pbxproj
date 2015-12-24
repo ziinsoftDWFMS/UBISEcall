@@ -16,8 +16,16 @@
 		57DAF1E41AFA7B2500065328 /* UBISEcallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DAF1E31AFA7B2500065328 /* UBISEcallTests.m */; };
 		57DFE5C31B2EF1A8004CA5CA /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DFE5C01B2EF1A8004CA5CA /* GlobalData.m */; };
 		57E27D731B03A45D000046EA /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 57E27D721B03A45D000046EA /* 1.wav */; };
+		97E15FAA1C22C18300D32CB2 /* GlobalDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E15FA91C22C18300D32CB2 /* GlobalDataManager.m */; };
+		97E15FB11C22C19600D32CB2 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E15FAC1C22C19600D32CB2 /* CameraViewController.m */; };
+		97E15FB21C22C19600D32CB2 /* Commonutil.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E15FAE1C22C19600D32CB2 /* Commonutil.m */; };
+		97E15FB31C22C19600D32CB2 /* ToastAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E15FB01C22C19600D32CB2 /* ToastAlertView.m */; };
+		97E15FB51C22C77400D32CB2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E15FB41C22C77400D32CB2 /* SystemConfiguration.framework */; };
+		97E15FB71C22C78000D32CB2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E15FB61C22C78000D32CB2 /* UIKit.framework */; };
+		97E15FB91C22C78C00D32CB2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E15FB81C22C78C00D32CB2 /* Foundation.framework */; };
+		97E15FBB1C22C79D00D32CB2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E15FBA1C22C79D00D32CB2 /* CoreGraphics.framework */; };
+		97E15FBD1C22DC3000D32CB2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E15FBC1C22DC3000D32CB2 /* AudioToolbox.framework */; };
 		BA0813251B3CE91C002E84B8 /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = BA0813241B3CE91C002E84B8 /* 2.wav */; };
-		BAAFA5A81B012069006C3185 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAAFA5A71B012069006C3185 /* AudioToolbox.framework */; };
 		BAAFA5AB1B012E63006C3185 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = BAAFA5AA1B012E63006C3185 /* sound.wav */; };
 		BAF22CA21B0052EF0019A333 /* CAllServer.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF22CA11B0052EF0019A333 /* CAllServer.m */; };
 		BAF22CA51B00588C0019A333 /* DwfmsSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF22CA41B00588C0019A333 /* DwfmsSegue.m */; };
@@ -54,8 +62,20 @@
 		57DFE5BF1B2EF1A8004CA5CA /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
 		57DFE5C01B2EF1A8004CA5CA /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 		57E27D721B03A45D000046EA /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		97E15FA81C22C18300D32CB2 /* GlobalDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalDataManager.h; sourceTree = "<group>"; };
+		97E15FA91C22C18300D32CB2 /* GlobalDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalDataManager.m; sourceTree = "<group>"; };
+		97E15FAB1C22C19600D32CB2 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		97E15FAC1C22C19600D32CB2 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		97E15FAD1C22C19600D32CB2 /* Commonutil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Commonutil.h; sourceTree = "<group>"; };
+		97E15FAE1C22C19600D32CB2 /* Commonutil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Commonutil.m; sourceTree = "<group>"; };
+		97E15FAF1C22C19600D32CB2 /* ToastAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastAlertView.h; sourceTree = "<group>"; };
+		97E15FB01C22C19600D32CB2 /* ToastAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastAlertView.m; sourceTree = "<group>"; };
+		97E15FB41C22C77400D32CB2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		97E15FB61C22C78000D32CB2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		97E15FB81C22C78C00D32CB2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		97E15FBA1C22C79D00D32CB2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		97E15FBC1C22DC3000D32CB2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BA0813241B3CE91C002E84B8 /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
-		BAAFA5A71B012069006C3185 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BAAFA5AA1B012E63006C3185 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		BAF22CA01B0052E20019A333 /* CAllServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAllServer.h; sourceTree = "<group>"; };
 		BAF22CA11B0052EF0019A333 /* CAllServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAllServer.m; sourceTree = "<group>"; };
@@ -73,7 +93,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAAFA5A81B012069006C3185 /* AudioToolbox.framework in Frameworks */,
+				97E15FBD1C22DC3000D32CB2 /* AudioToolbox.framework in Frameworks */,
+				97E15FBB1C22C79D00D32CB2 /* CoreGraphics.framework in Frameworks */,
+				97E15FB91C22C78C00D32CB2 /* Foundation.framework in Frameworks */,
+				97E15FB71C22C78000D32CB2 /* UIKit.framework in Frameworks */,
+				97E15FB51C22C77400D32CB2 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +114,11 @@
 		57DAF1BB1AFA7B2500065328 = {
 			isa = PBXGroup;
 			children = (
-				BAAFA5A71B012069006C3185 /* AudioToolbox.framework */,
+				97E15FBC1C22DC3000D32CB2 /* AudioToolbox.framework */,
+				97E15FBA1C22C79D00D32CB2 /* CoreGraphics.framework */,
+				97E15FB81C22C78C00D32CB2 /* Foundation.framework */,
+				97E15FB61C22C78000D32CB2 /* UIKit.framework */,
+				97E15FB41C22C77400D32CB2 /* SystemConfiguration.framework */,
 				57DAF1C61AFA7B2500065328 /* UBISEcall */,
 				57DAF1E01AFA7B2500065328 /* UBISEcallTests */,
 				57DAF1C51AFA7B2500065328 /* Products */,
@@ -126,6 +154,14 @@
 				57DAF1D61AFA7B2500065328 /* LaunchScreen.xib */,
 				57DFE5BF1B2EF1A8004CA5CA /* GlobalData.h */,
 				57DFE5C01B2EF1A8004CA5CA /* GlobalData.m */,
+				97E15FA81C22C18300D32CB2 /* GlobalDataManager.h */,
+				97E15FA91C22C18300D32CB2 /* GlobalDataManager.m */,
+				97E15FAB1C22C19600D32CB2 /* CameraViewController.h */,
+				97E15FAC1C22C19600D32CB2 /* CameraViewController.m */,
+				97E15FAD1C22C19600D32CB2 /* Commonutil.h */,
+				97E15FAE1C22C19600D32CB2 /* Commonutil.m */,
+				97E15FAF1C22C19600D32CB2 /* ToastAlertView.h */,
+				97E15FB01C22C19600D32CB2 /* ToastAlertView.m */,
 				57DAF1C71AFA7B2500065328 /* Supporting Files */,
 			);
 			path = UBISEcall;
@@ -283,11 +319,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97E15FB21C22C19600D32CB2 /* Commonutil.m in Sources */,
 				57DFE5C31B2EF1A8004CA5CA /* GlobalData.m in Sources */,
 				57DAF1D01AFA7B2500065328 /* ViewController.m in Sources */,
 				BAF22CA51B00588C0019A333 /* DwfmsSegue.m in Sources */,
 				57DAF1CD1AFA7B2500065328 /* AppDelegate.m in Sources */,
+				97E15FAA1C22C18300D32CB2 /* GlobalDataManager.m in Sources */,
 				BAF22CA21B0052EF0019A333 /* CAllServer.m in Sources */,
+				97E15FB31C22C19600D32CB2 /* ToastAlertView.m in Sources */,
+				97E15FB11C22C19600D32CB2 /* CameraViewController.m in Sources */,
 				BAF22CA71B0058950019A333 /* authViewController.m in Sources */,
 				57DAF1CA1AFA7B2500065328 /* main.m in Sources */,
 			);
